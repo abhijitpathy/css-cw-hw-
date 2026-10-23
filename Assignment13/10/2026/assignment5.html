@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo Board</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 10px;
+        }
+
+        .cont {
+            width: 604px;
+            height: 604px;
+            border: 2px solid black;
+        }
+
+        .r1, .r3 {
+            display: flex;
+            width: 600px;
+            height: 240px;
+        }
+
+        .topr, .topg, .topb, .topy {
+            width: 240px;
+            height: 240px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .topr { background-color: red; }
+        .topg { background-color: green; }
+        .topb { background-color: blue; }
+        .topy { background-color: yellow; }
+
+        .s1qr {
+            width: 160px;
+            height: 160px;
+            background-color: white;
+            border: 2px transparent black;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding: 12px;
+        }
+
+        .token-row {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .circle1, .circle2, .circle3, .circle4 {
+            width: 30px;
+            height: 30px;
+            border: 2px solid;
+            border-radius: 50%;
+        }
+
+        .circle1 { border-color: red; }
+        .circle2 { border-color: green; }
+        .circle3 { border-color: blue; }
+        .circle4 { border-color: #c9bd00; }
+
+        .mid {
+            width: 120px;
+            height: 240px;
+            flex-shrink: 0;
+        }
+
+        .mr1 {
+            display: flex;
+            height: 40px;
+        }
+
+        .box {
+            width: 40px;
+            height: 40px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cor { background-color: red; }
+        .cog { background-color: green; }
+        .cob { background-color: blue; }
+        .coy { background-color: yellow; }
+
+        .r12 {
+            display: flex;
+            width: 600px;
+            height: 120px;
+        }
+
+        .side {
+            width: 240px;
+            height: 120px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+
+        .side .box {
+            width: 40px;
+            height: 40px;
+        }
+
+        .centre {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            flex-shrink: 0;
+            border: 1px solid black;
+        }
+
+        .triangle {
+            position: absolute;
+            width: 118px;
+            height: 118px;
+            top: 0;
+            left: 0;
+        }
+
+        .redpart {
+            background-color: red;
+            clip-path: polygon(0 0, 0 100%, 50% 50%);
+        }
+
+        .greenpart {
+            background-color: green;
+            clip-path: polygon(0 0, 100% 0, 50% 50%);
+        }
+
+        .bluepart {
+            background-color: blue;
+            clip-path: polygon(0 100%, 100% 100%, 50% 50%);
+        }
+
+        .yellowpart {
+            background-color: yellow;
+            clip-path: polygon(100% 0, 100% 100%, 50% 50%);
+        }
+
+        .star {
+            font-size: 22px;
+            line-height: 1;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cont">
+
+
+        <div class="r1">
+
+            <div class="topr">
+                <div class="s1qr">
+                    <div class="token-row">
+                        <div class="circle1"></div>
+                        <div class="circle1"></div>
+                    </div>
+                    <div class="token-row">
+                        <div class="circle1"></div>
+                        <div class="circle1"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mid">
+
+                <div class="mr1">
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </div>
+
+                <div class="mr1">
+                    <div class="box"></div>
+                    <div class="box cog"></div>
+                  <div class="box cog"><b class="star">★</b></div>
+                </div>
+
+                <div class="mr1">
+                    <div class="box cog"><b class="star">★</b></div>
+                    <div class="box cog"></div>
+                    <div class="box"></div>
+                </div>
+
+                <div class="mr1">
+                    <div class="box"></div>
+                    <div class="box cog"></div>
+                    <div class="box"></div>
+                </div>
+
+                <div class="mr1">
+                    <div class="box"></div>
+                    <div class="box cog"></div>
+                    <div class="box"></div>
+                </div>
+
+                <div class="mr1">
+                    <div class="box"></div>
+                    <div class="box cog"></div>
+                    <div class="box"></div>
+                </div>
+
+            </div>
+
+            <div class="topg">
+                <div class="s1qr">
+                    <div class="token-row">
+                        <div class="circle2"></div>
+                        <div class="circle2"></div>
+                    </div>
+                    <div class="token-row">
+                        <div class="circle2"></div>
+                        <div class="circle2"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    
+
+        <div class="r12">
+
+            <div class="side">
+
+                <div class="box"></div>
+                <div class="box cor"><b class="star">★</b></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+
+                <div class="box"></div>
+                <div class="box cor"></div>
+                <div class="box cor"></div>
+                <div class="box cor"></div>
+                <div class="box cor"></div>
+                <div class="box cor"></div>
+
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box cor"><b class="star">★</b></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+
+            </div>
+
+            <div class="centre">
+                <div class="triangle redpart"></div>
+                <div class="triangle greenpart"></div>
+                <div class="triangle bluepart"></div>
+                <div class="triangle yellowpart"></div>
+            </div>
+
+            <div class="side">
+
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box coy"><b class="star">★</b></div>
+                <div class="box"></div>
+                <div class="box"></div>
+
+                <div class="box coy"></div>
+                <div class="box coy"></div>
+                <div class="box coy"></div>
+                <div class="box coy"></div>
+                <div class="box coy"></div>
+                <div class="box"></div>
+
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box coy"><b class="star">★</b></div>
+                <div class="box"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="r3">
+
+            <div class="topb">
+                <div class="s1qr">
+                    <div class="token-row">
+                        <div class="circle3"></div>
+                        <div class="circle3"></div>
+                    </div>
+                    <div class="token-row">
+                        <div class="circle3"></div>
+                        <div class="circle3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mid">
+
+                <div class="mr1">
+                    <div class="box"></div>
+                    <div class="box cob"></div>
+                    <div class="box"></div>
+                </div>
+
+                <div class="mr1">
+                    <div class="box"></div>
+                    <div class="box cob"></div>
+                    <div class="box"></div>
+                </div>
+
+                <div class="mr1">
+                    <div class="box"></div>
+                    <div class="box cob"></div>
+                    <div class="box"></div>
+                </div>
+
+                <div class="mr1">
+                    <div class="box"></div>
+                    <div class="box cob"></div>
+                    <div class="box cob"><b class="star">★</b></div>
+                </div>
+
+                <div class="mr1">
+                    <div class="box cob"><b class="star">★</b></div>
+                    <div class="box cob"></div>
+                    <div class="box "></div>
+                    
+                </div>
+
+                <div class="mr1">
+                    <div class="box "></div>
+                    <div class="box "></div>
+                    <div class="box"></div>
+                </div>
+
+            </div>
+
+            <div class="topy">
+                <div class="s1qr">
+                    <div class="token-row">
+                        <div class="circle4"></div>
+                        <div class="circle4"></div>
+                    </div>
+                    <div class="token-row">
+                        <div class="circle4"></div>
+                        <div class="circle4"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

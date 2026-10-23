@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kidz World</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+
+
+        header {
+            min-height: 60px;
+            padding: 10px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            display: block;
+            width: auto;
+            height: 35px;
+        }
+
+        .cart {
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .cart img {
+            width: 20px;
+        }
+
+   
+
+        .hero {
+            min-height: 300px;
+            background-image: url("/css-cw-hw-/assests/kw-background.png");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 25px 5%;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 44px;
+            line-height: 1.3;
+            margin: 0;
+        }
+
+        .hero p {
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+ 
+
+        main {
+            padding: 0 5% 50px;
+        }
+
+        section {
+            margin-top: 60px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+
+        .productsbooks {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .product {
+            width: calc((100% - 150px) / 6);
+            min-width: 0;
+        }
+
+        .product img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            padding: 5px;
+        }
+
+        h3 {
+            font-size: 15px;
+            margin: 10px 0 5px;
+        }
+
+        .description {
+            font-size: 13px;
+            color: gray;
+            margin-bottom: 12px;
+        }
+
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .price {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .add {
+            background: #6395ff;
+            color: white;
+            padding: 7px 10px;
+            font-size: 12px;
+            text-decoration: none;
+            border-radius: 3px;
+            white-space: nowrap;
+        }
+
+      
+
+        @media (max-width: 1024px) {
+            .hero {
+                min-height: 280px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .productsbooks {
+                gap: 25px;
+            }
+
+            .product {
+                width: calc((100% - 75px) / 4);
+            }
+
+            h3 {
+                font-size: 14px;
+            }
+
+            .description {
+                font-size: 12px;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+            header {
+                padding: 10px 4%;
+            }
+
+            .logo img {
+                height: 28px;
+            }
+
+            .cart {
+                font-size: 13px;
+            }
+
+            .cart img {
+                width: 18px;
+            }
+
+            .hero {
+                min-height: 230px;
+                padding: 20px 5%;
+                background-position: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 12px;
+            }
+
+            main {
+                padding: 0 4% 30px;
+            }
+
+            section {
+                margin-top: 40px;
+            }
+
+            h2 {
+                font-size: 23px;
+                margin-bottom: 18px;
+            }
+
+            .productsbooks {
+                gap: 25px 15px;
+            }
+
+            .product {
+                width: calc((100% - 15px) / 2);
+            }
+
+            .product img {
+                border-radius: 5px;
+            }
+
+            h3 {
+                font-size: 14px;
+            }
+
+            .description {
+                font-size: 12px;
+            }
+
+            .price {
+                font-size: 13px;
+            }
+
+            .add {
+                padding: 6px 8px;
+                font-size: 11px;
+            }
+        }
+
+       
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <a href="#" class="logo">
+            <img src="/css-cw-hw-/assests/kw-logo.png" alt="Kidz World Logo">
+        </a>
+
+        <div class="cart">
+            <img src="/css-cw-hw-/assests/cart-icon.png" alt="Cart">
+            <span>Cart Items</span>
+        </div>
+    </header>
+
+
+    <div class="hero">
+        <div>
+            <h1>Shop.<br>Have Fun.<br>Repeat.</h1>
+            <p>#NewAndNow</p>
+        </div>
+    </div>
+
+    <main>
+
+
+        <section>
+            <h2>Discover New Books</h2>
+
+            <div class="productsbooks">
+
+                <div class="product">
+                    <img src="/css-cw-hw-/assests/book1.png" alt="This Was Our Pact">
+                    <h3>This Was Our Pact</h3>
+                    <p class="description">Ryan Andrews</p>
+                    <div class="bottom">
+                        <span class="price">$7.49</span>
+                        <a href="#" class="add">Add 🛒</a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="/css-cw-hw-/assests/book2.png" alt="The Famous Five">
+                    <h3>The Famous Five</h3>
+                    <p class="description">Enid Blyton</p>
+                    <div class="bottom">
+                        <span class="price">$4.59</span>
+                        <a href="#" class="add">Add 🛒</a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="/css-cw-hw-/assests/book3.png" alt="Matilda">
+                    <h3>Matilda</h3>
+                    <p class="description">Roald Dahl</p>
+                    <div class="bottom">
+                        <span class="price">$6.80</span>
+                        <a href="#" class="add">Add 🛒</a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="/css-cw-hw-/assests/book4.png" alt="Harry Potter">
+                    <h3>Harry Potter</h3>
+                    <p class="description">J.K. Rowling</p>
+                    <div class="bottom">
+                        <span class="price">$10.00</span>
+                        <a href="#" class="add">Add 🛒</a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="/css-cw-hw-/assests/book5.png" alt="For Young Readers">
+                    <h3>For Young Readers</h3>
+                    <p class="description">Ruskin Bond</p>
+                    <div class="bottom">
+                        <span class="price">$7.29</span>
+                        <a href="#" class="add">Add 🛒</a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="/css-cw-hw-/assests/book6.png" alt="Wimpy Kid">
+                    <h3>Wimpy Kid - DIY</h3>
+                    <p class="description">Jeff Kinney</p>
+                    <div class="bottom">
+                        <span class="price">$4.99</span>
+                        <a href="#" class="add">Add 🛒</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <section>
+            <h2>Discover New Games</h2>
+
+            <div class="productsbooks">
+
+                <div class="product">
+                    <img src="/css-cw-hw-/assests/dart-board.png" alt="Dart Board">
+                    <h3>Dart Board</h3>
+                    <p class="description">Wooden board, 16 inches</p>
+                    <div class="bottom">
+                        <span class="price">$17.49</span>
+                        <a href="#" class="add">Add 🛒</a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="/css-cw-hw-/assests/connect-four.png" alt="Connect Four">
+                    <h3>Connect 4</h3>
+                    <p class="description">Multiplayer board game</p>
+                    <div class="bottom">
+                        <span class="price">$19.99</span>
+                        <a href="#" class="add">Add 🛒</a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="/css-cw-hw-/assests/jenga.png" alt="Jenga">
+                    <h3>Jenga</h3>
+                    <p class="description">Wooden blocks, 54 pieces</p>
+                    <div class="bottom">
+                        <span class="price">$20.99</span>
+                        <a href="#" class="add">Add 🛒</a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="/css-cw-hw-/assests/monopoly.png" alt="Monopoly">
+                    <h3>Monopoly</h3>
+                    <p class="description">Classic board game</p>
+                    <div class="bottom">
+                        <span class="price">$10.00</span>
+                        <a href="#" class="add">Add 🛒</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+   
+
+        <section>
+            <h2>Handmade with Love</h2>
+
+            <div class="productsbooks">
+
+                <div class="product">
+                    <img src="/css-cw-hw-/assests/bookmarks.png" alt="Bookmarks">
+                    <h3>Bookmarks</h3>
+                    <p class="description">Handmade with love</p>
+                    <div class="bottom">
+                        <span class="price">$12.49</span>
+                        <a href="#" class="add">Add 🛒</a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="/css-cw-hw-/assests/birthday-card.png" alt="Birthday Card">
+                    <h3>Birthday Card</h3>
+                    <p class="description">Handmade with love</p>
+                    <div class="bottom">
+                        <span class="price">$19.99</span>
+                        <a href="#" class="add">Add 🛒</a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="/css-cw-hw-/assests/stuffed-toy.png" alt="Stuffed Toy">
+                    <h3>Stuffed Toy</h3>
+                    <p class="description">Handmade with love</p>
+                    <div class="bottom">
+                        <span class="price">$20.99</span>
+                        <a href="#" class="add">Add 🛒</a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="/css-cw-hw-/assests/dream-catcher.png" alt="Dream Catcher">
+                    <h3>Dream Catcher</h3>
+                    <p class="description">Handmade with love</p>
+                    <div class="bottom">
+                        <span class="price">$10.00</span>
+                        <a href="#" class="add">Add 🛒</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
+

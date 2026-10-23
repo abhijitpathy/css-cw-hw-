@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cont{
+            display: flex;
+            gap:40px;
+
+          
+            
+
+        }
+        .qsudoku{
+              border:2px solid black;
+            width:303px;
+            height:303px;
+
+        }
+        .r1s{
+            display: flex;
+
+
+        }
+        .b1su{
+            border: 1px solid black;
+            width:100px;
+            height: 100px;
+            display: flex;
+
+        }
+        .sq{
+            border:1px solid green;
+            width:32px;
+            height:32px;
+
+
+        }
+        .sqg{
+         border:1px solid green;
+            width:32px;
+            height:32px;
+            background-color:#A9D8B7 ;
+            
+
+        }
+        .txt{
+            margin:25.50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+    <div class="qsudoku">
+        <div class="r1s">
+            <div class="b1su">
+                <div class="br1">
+                <div class="sq"><p class="txt">8</p></div>
+                <div class="sq"><p class="txt"></p></div>
+                <div class="sq"><p class="txt">2</p></div>
+                </div>
+                <div class="br1">
+                <div class="sq"><p class="txt"></p></div>
+                <div class="sq"><p class="txt">4</p></div>
+                <div class="sq"><p class="txt"></p></div>
+                </div>
+                <div class="br1">
+                <div class="sq"><p class="txt">6</p></div>
+                <div class="sq"><p class="txt"></p></div>
+                <div class="sq"><p class="txt"></p></div>
+                </div>
+               
+                
+
+            </div>
+            <div class="b1su">
+                <div class="br1">
+                <div class="sqg"><p class="txt"></p></div>
+                <div class="sqg"><p class="txt"></p></div>
+                <div class="sqg"><p class="txt">8</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sqg"><p class="txt"></p></div>
+                <div class="sqg"><p class="txt">1</p></div>
+                <div class="sqg"><p class="txt">7</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sqg"><p class="txt">3</p></div>
+                <div class="sqg"><p class="txt"></p></div>
+                <div class="sqg"><p class="txt"></p></div>
+                </div>
+            </div>
+            <div class="b1su">
+                <div class="br1">
+                <div class="sq"><p class="txt"></p></div>
+                <div class="sq"><p class="txt"></p></div>
+                <div class="sq"><p class="txt"></p></div>
+                </div>
+                 <div class="br1">
+                <div class="sq"><p class="txt">9</p></div>
+                <div class="sq"><p class="txt">6</p></div>
+                <div class="sq"><p class="txt"></p></div>
+                </div>
+                 <div class="br1">
+                <div class="sq"><p class="txt"></p></div>
+                <div class="sq"><p class="txt">8</p></div>
+                <div class="sq"><p class="txt">5</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="r1s">
+            <div class="b1su">
+                <div class="br1">
+                <div class="sqg"><p class="txt">1</p></div>
+                <div class="sqg"><p class="txt"></p></div>
+                <div class="sqg"><p class="txt">7</p></div>
+            
+                </div>
+                 <div class="br1">
+                <div class="sqg"><p class="txt"></p></div>
+                <div class="sqg"><p class="txt">3</p></div>
+                <div class="sqg"><p class="txt"></p></div>
+                </div>
+                 <div class="br1">
+                <div class="sqg"><p class="txt">8</p></div>
+                <div class="sqg"><p class="txt"></p></div>
+                <div class="sqg"><p class="txt">5</p></div>
+            </div>
+            </div>
+ 
+            <div class="b1su">
+                <div class="br1">
+                <div class="sq"><p class="txt"></p></div>
+                <div class="sq"><p class="txt">1</p></div>
+                <div class="sq"><p class="txt"></p></div>
+                </div>
+                 <div class="br1">
+                <div class="sq"><p class="txt"></p></div>
+                <div class="sq"><p class="txt"></p></div>
+                <div class="sq"><p class="txt">3</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sq"><p class="txt">5</p></div>
+                <div class="sq"><p class="txt"></p></div>
+                <div class="sq"><p class="txt"></p></div>
+                </div>
+            </div>
+                <div class="b1su">
+                <div class="br1">
+                <div class="sqg"><p class="txt"></p></div>
+                <div class="sqg"><p class="txt"></p></div>
+                <div class="sqg"><p class="txt">9</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sqg"><p class="txt">2</p></div>
+                <div class="sqg"><p class="txt">5</p></div>
+                <div class="sqg"><p class="txt"></p></div>
+                </div>
+                 <div class="br1">
+                <div class="sqg"><p class="txt"></p></div>
+                <div class="sqg"><p class="txt"></p></div>
+                <div class="sqg"><p class="txt"></p></div>
+                </div>
+            </div>
+        </div>
+         <div class="r1s">
+            <div class="b1su">
+                <div class="br1">
+                <div class="sq"><p class="txt"></p></div>
+                <div class="sq"><p class="txt">6</p></div>
+                <div class="sq"><p class="txt"></p></div>
+                </div>
+                 <div class="br1">
+                <div class="sq"><p class="txt">2</p></div>
+                <div class="sq"><p class="txt"></p></div>
+                <div class="sq"><p class="txt">8</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sq"><p class="txt">1</p></div>
+                <div class="sq"><p class="txt"></p></div>
+                <div class="sq"><p class="txt">7</p></div>
+                </div>
+                
+
+            </div>
+            <div class="b1su">
+                <div class="br1">
+                <div class="sqg"><p class="txt"></p></div>
+                <div class="sqg"><p class="txt"></p></div>
+                <div class="sqg"><p class="txt">6</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sqg"><p class="txt"></p></div>
+                <div class="sqg"><p class="txt">2</p></div>
+                <div class="sqg"><p class="txt"></p></div>
+                </div>
+                 <div class="br1">
+                <div class="sqg"><p class="txt">7</p></div>
+                <div class="sqg"><p class="txt"></p></div>
+                <div class="sqg"><p class="txt">4</p></div>
+                </div>
+            </div>
+            <div class="b1su">
+                <div class="br1">
+                <div class="sq"><p class="txt"></p></div>
+                <div class="sq"><p class="txt">8</p></div>
+                <div class="sq"><p class="txt"></p></div>
+                </div>
+                 <div class="br1">
+                <div class="sq"><p class="txt">4</p></div>
+                <div class="sq"><p class="txt"></p></div>
+                <div class="sq"><p class="txt"></p></div>
+                </div>
+                 <div class="br1">
+                <div class="sq"><p class="txt"></p></div>
+                <div class="sq"><p class="txt"></p></div>
+                <div class="sq"><p class="txt">3</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="qsudoku">
+        <div class="r1s">
+            <div class="b1su">
+                <div class="br1">
+                <div class="sq"><p class="txt">8</p></div>
+                <div class="sq"><p class="txt">5</p></div>
+                <div class="sq"><p class="txt">2</p></div>
+                </div>
+                <div class="br1">
+                <div class="sq"><p class="txt">7</p></div>
+                <div class="sq"><p class="txt">4</p></div>
+                <div class="sq"><p class="txt">1</p></div>
+                </div>
+                <div class="br1">
+                <div class="sq"><p class="txt">6</p></div>
+                <div class="sq"><p class="txt">3</p></div>
+                <div class="sq"><p class="txt">9</p></div>
+                </div>
+               
+                
+
+            </div>
+            <div class="b1su">
+                <div class="br1">
+                <div class="sqg"><p class="txt">5</p></div>
+                <div class="sqg"><p class="txt">2</p></div>
+                <div class="sqg"><p class="txt">8</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sqg"><p class="txt"4>4</p></div>
+                <div class="sqg"><p class="txt">1</p></div>
+                <div class="sqg"><p class="txt">7</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sqg"><p class="txt">3</p></div>
+                <div class="sqg"><p class="txt">9</p></div>
+                <div class="sqg"><p class="txt">6</p></div>
+                </div>
+            </div>
+            <div class="b1su">
+                <div class="br1">
+                <div class="sq"><p class="txt">1</p></div>
+                <div class="sq"><p class="txt">7</p></div>
+                <div class="sq"><p class="txt">4</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sq"><p class="txt">9</p></div>
+                <div class="sq"><p class="txt">6</p></div>
+                <div class="sq"><p class="txt">3</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sq"><p class="txt">2</p></div>
+                <div class="sq"><p class="txt">8</p></div>
+                <div class="sq"><p class="txt">5</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="r1s">
+            <div class="b1su">
+                <div class="br1">
+                <div class="sqg"><p class="txt">1</p></div>
+                <div class="sqg"><p class="txt">4</p></div>
+                <div class="sqg"><p class="txt">7</p></div>
+            
+                </div>
+                 <div class="br1">
+                <div class="sqg"><p class="txt">9</p></div>
+                <div class="sqg"><p class="txt">3</p></div>
+                <div class="sqg"><p class="txt">6</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sqg"><p class="txt">8</p></div>
+                <div class="sqg"><p class="txt">2</p></div>
+                <div class="sqg"><p class="txt">5</p></div>
+            </div>
+            </div>
+ 
+            <div class="b1su">
+                <div class="br1">
+                <div class="sq"><p class="txt">7</p></div>
+                <div class="sq"><p class="txt">1</p></div>
+                <div class="sq"><p class="txt">4</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sq"><p class="txt">6</p></div>
+                <div class="sq"><p class="txt">9</p></div>
+                <div class="sq"><p class="txt">3</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sq"><p class="txt">5</p></div>
+                <div class="sq"><p class="txt">8</p></div>
+                <div class="sq"><p class="txt">2</p></div>
+                </div>
+            </div>
+                <div class="b1su">
+                <div class="br1">
+                <div class="sqg"><p class="txt">3</p></div>
+                <div class="sqg"><p class="txt">6</p></div>
+                <div class="sqg"><p class="txt">9</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sqg"><p class="txt">2</p></div>
+                <div class="sqg"><p class="txt">5</p></div>
+                <div class="sqg"><p class="txt">8</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sqg"><p class="txt">4</p></div>
+                <div class="sqg"><p class="txt">7</p></div>
+                <div class="sqg"><p class="txt">1</p></div>
+                </div>
+            </div>
+        </div>
+         <div class="r1s">
+            <div class="b1su">
+                <div class="br1">
+                <div class="sq"><p class="txt">3</p></div>
+                <div class="sq"><p class="txt">6</p></div>
+                <div class="sq"><p class="txt">9</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sq"><p class="txt">2</p></div>
+                <div class="sq"><p class="txt">5</p></div>
+                <div class="sq"><p class="txt">8</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sq"><p class="txt">1</p></div>
+                <div class="sq"><p class="txt">4</p></div>
+                <div class="sq"><p class="txt">7</p></div>
+                </div>
+                
+
+            </div>
+            <div class="b1su">
+                <div class="br1">
+                <div class="sqg"><p class="txt">9</p></div>
+                <div class="sqg"><p class="txt">3</p></div>
+                <div class="sqg"><p class="txt">6</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sqg"><p class="txt">8</p></div>
+                <div class="sqg"><p class="txt">2</p></div>
+                <div class="sqg"><p class="txt">5</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sqg"><p class="txt">7</p></div>
+                <div class="sqg"><p class="txt">1</p></div>
+                <div class="sqg"><p class="txt">4</p></div>
+                </div>
+            </div>
+            <div class="b1su">
+                <div class="br1">
+                <div class="sq"><p class="txt">5</p></div>
+                <div class="sq"><p class="txt">8</p></div>
+                <div class="sq"><p class="txt">2</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sq"><p class="txt">4</p></div>
+                <div class="sq"><p class="txt">7</p></div>
+                <div class="sq"><p class="txt">1</p></div>
+                </div>
+                 <div class="br1">
+                <div class="sq"><p class="txt">6</p></div>
+                <div class="sq"><p class="txt">9</p></div>
+                <div class="sq"><p class="txt">3</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    
+</body>
+</html>
