@@ -1,0 +1,831 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Homepage</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0f0f0f;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header */
+
+        header {
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            background-color: #0f0f0f;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .menu {
+            width: 24px;
+            height: 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo img {
+            width:100px;
+            height: 22px;
+        }
+
+        /* Search bar */
+
+        .search-area {
+            display: flex;
+            align-items: center;
+            width: 45%;
+            max-width: 600px;
+        }
+
+        .search-area input {
+            width: 100%;
+            height: 40px;
+            background-color: #121212;
+            border: 1px solid #303030;
+            border-radius: 20px 0 0 20px;
+            padding: 0 15px;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-button {
+            width: 55px;
+            height: 40px;
+            background-color: #222222;
+            border: 1px solid #303030;
+            border-radius: 0 20px 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-button img {
+            width: 22px;
+            height: 22px;
+        }
+
+        .mic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #222222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 12px;
+        }
+
+        .mic img {
+            width: 22px;
+            height: 22px;
+        }
+
+        /* Header right side */
+
+        .right {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .right img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .profile {
+            width: 34px !important;
+            height: 34px !important;
+            border-radius: 50%;
+        }
+
+        /* Sidebar */
+
+        .sidebar {
+            width: 190px;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            bottom: 0;
+            background-color: #0f0f0f;
+            padding: 8px 10px;
+            overflow-y: auto;
+        }
+
+        .side-item {
+            height: 38px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 0 8px;
+            border-radius: 8px;
+            font-size: 12px;
+            margin-bottom: 2px;
+        }
+
+        .side-item img {
+            width: 22px;
+            height: 22px;
+        }
+
+        .side-item.active {
+            background-color: #272727;
+            font-weight: bold;
+        }
+
+        .side-item:hover {
+            background-color: #272727;
+        }
+
+        .line {
+            border-top: 1px solid #303030;
+            margin: 12px 0;
+        }
+
+        .side-heading {
+            font-size: 12px;
+            color: #aaaaaa;
+            font-weight: bold;
+            padding: 10px 4px;
+        }
+
+        .subscription img {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+        }
+
+        /* Main content */
+
+        main {
+            margin-left: 190px;
+            padding: 78px 20px 30px;
+        }
+
+        /* Category buttons */
+
+        .categories {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 20px;
+        }
+
+        .categories button {
+            background-color: #272727;
+            color: white;
+            border: none;
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .categories button:first-child {
+            background-color: white;
+            color: black;
+        }
+
+        .categories button:hover {
+            background-color: #3f3f3f;
+        }
+
+        /* Video grid */
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 32px 14px;
+        }
+
+        .video-card {
+            min-width: 0;
+        }
+
+        .thumbnail {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #202020;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-info {
+            display: flex;
+            gap: 10px;
+        }
+
+        .channel-image {
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
+        }
+
+        .channel-image img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .video-text {
+            min-width: 0;
+        }
+
+        .video-title {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .channel-name,
+        .video-stats {
+            color: #aaaaaa;
+            font-size: 12px;
+            line-height: 18px;
+        }
+
+        /* Responsive layout */
+
+        @media (max-width: 1100px) {
+            .video-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .sidebar {
+                width: 170px;
+            }
+
+            main {
+                margin-left: 170px;
+            }
+
+            .search-area {
+                width: 40%;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .video-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .sidebar {
+                width: 70px;
+            }
+
+            .side-item {
+                justify-content: center;
+                padding: 0;
+            }
+
+            .side-item span,
+            .side-heading {
+                display: none;
+            }
+
+            .line {
+                margin: 10px 0;
+            }
+
+            main {
+                margin-left: 70px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .right {
+                gap: 12px;
+            }
+
+            .search-area {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 550px) {
+            header {
+                padding: 0 10px;
+            }
+
+            .left {
+                gap: 10px;
+            }
+
+            .logo {
+                font-size: 17px;
+            }
+
+            .search-area {
+                width: 35%;
+            }
+
+            .search-area input {
+                padding: 0 8px;
+                font-size: 13px;
+            }
+
+            .search-button {
+                width: 35px;
+            }
+
+            .mic,
+            .right img {
+                display: none;
+            }
+
+            .right .profile {
+                display: block;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .thumbnail {
+                border-radius: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <div class="left">
+            <img class="menu" src="/css-cw-hw-/youtubeClone/assests/hambarger.png" alt="Menu">
+
+            <div class="logo">
+                <img src="/css-cw-hw-/youtubeClone/assests/Youtube logo.png" alt="YouTube Logo" width="40px">
+                <span></span>
+            </div>
+        </div>
+
+        <div class="search-area">
+            <input type="text" placeholder="Search">
+
+            <button class="search-button">
+                <img src="/css-cw-hw-/youtubeClone/assests/search.png" alt="Search">
+            </button>
+
+            <div class="mic">
+                <img src="/css-cw-hw-/youtubeClone/assests/mic.png" alt="Microphone">
+            </div>
+        </div>
+
+        <div class="right">
+            <img src="/css-cw-hw-/youtubeClone/assests/create.png" alt="Create">
+            <img src="/css-cw-hw-/youtubeClone/assests/more.png" alt="Apps">
+            <img src="/css-cw-hw-/youtubeClone/assests/bell.png" alt="Notifications">
+            <img class="profile" src="/css-cw-hw-/youtubeClone/assests/Ellipse 1 (2).png" alt="Profile">
+        </div>
+
+    </header>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="side-item active">
+            <img src="/css-cw-hw-/youtubeClone/assests/home.png" alt="Home">
+            <span>Home</span>
+        </div>
+
+        <div class="side-item">
+            <img src="/css-cw-hw-/youtubeClone/assests/explore.png" alt="Explore">
+            <span>Explore</span>
+        </div>
+
+        <div class="side-item">
+            <img src="/css-cw-hw-/youtubeClone/assests/shorts.png" alt="Shorts">
+            <span>Shorts</span>
+        </div>
+
+        <div class="side-item">
+            <img src="/css-cw-hw-/youtubeClone/assests/subscription.png" alt="Subscriptions">
+            <span>Subscriptions</span>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="side-item">
+            <img src="/css-cw-hw-/youtubeClone/assests/library.png" alt="Library">
+            <span>Library</span>
+        </div>
+
+        <div class="side-item">
+            <img src="/css-cw-hw-/youtubeClone/assests/history.png" alt="History">
+            <span>History</span>
+        </div>
+
+        <div class="side-item">
+            <img src="/css-cw-hw-/youtubeClone/assests/your_video.png" alt="Your Videos">
+            <span>Your videos</span>
+        </div>
+
+        <div class="side-item">
+            <img src="/css-cw-hw-/youtubeClone/assests/watch_later.png" alt="Watch Later">
+            <span>Watch later</span>
+        </div>
+
+        <div class="side-item">
+            <img src="/css-cw-hw-/youtubeClone/assests/liked.png" alt="Liked Videos">
+            <span>Liked videos</span>
+        </div>
+
+        <div class="sid
+        e-item">
+            <img src="/css-cw-hw-/youtubeClone/assests/down_arrow.png" alt="Show More">
+            <span>Show more</span>
+        </div>
+
+        <div class="line"></div>
+
+        <p class="side-heading">SUBSCRIPTIONS</p>
+
+        <div class="side-item subscription">
+            <img src="/css-cw-hw-/youtubeClone/assests/" alt="Channel">
+            <span>Nadir On The Go</span>
+        </div>
+
+        <div class="side-item subscription">
+            <img src="" alt="Channel">
+            <span>Coke Studio Bangla</span>
+        </div>
+
+        <div class="side-item subscription">
+            <img src="" alt="Channel">
+            <span>MkBHD</span>
+        </div>
+
+        <div class="side-item subscription">
+            <img src="" alt="Channel">
+            <span>Figma</span>
+        </div>
+
+        <div class="side-item subscription">
+            <img src="" alt="Channel">
+            <span>ATC Android To Company</span>
+        </div>
+
+        <div class="side-item subscription">
+            <img src="" alt="Channel">
+            <span>Alux.com</span>
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main>
+
+        <!-- Categories -->
+
+        <div class="categories">
+            <button>All</button>
+            <button>Cook Studio</button>
+            <button>UX</button>
+            <button>Case Study</button>
+            <button>Music</button>
+            <button>Bangla Lofi</button>
+            <button>Tour</button>
+            <button>Saintmartin</button>
+            <button>Tech</button>
+            <button>iPhone 13</button>
+            <button>User Interface Design</button>
+            <button>Computer</button>
+        </div>
+
+        <!-- Videos -->
+
+        <div class="video-grid">
+
+            <!-- Video 1 -->
+
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="" alt="Video Thumbnail">
+                </div>
+
+                <div class="video-info">
+                    <div class="channel-image">
+                        <img src="" alt="Channel">
+                    </div>
+
+                    <div class="video-text">
+                        <p class="video-title">
+                            Bulbuli | Coke Studio Bangla | Season One
+                        </p>
+
+                        <p class="channel-name">Coke Studio Bangla ✓</p>
+                        <p class="video-stats">1.5M views • 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="" alt="Video Thumbnail">
+                </div>
+
+                <div class="video-info">
+                    <div class="channel-image">
+                        <img src="" alt="Channel">
+                    </div>
+
+                    <div class="video-text">
+                        <p class="video-title">
+                            Infinix Note 12: AMOLED
+                        </p>
+
+                        <p class="channel-name">ATC Android To Company ✓</p>
+                        <p class="video-stats">4.2M views • 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="" alt="Video Thumbnail">
+                </div>
+
+                <div class="video-info">
+                    <div class="channel-image">
+                        <img src="" alt="Channel">
+                    </div>
+
+                    <div class="video-text">
+                        <p class="video-title">
+                            My first UX Design case study - This got me my first job.
+                        </p>
+
+                        <p class="channel-name">Saptarshi Prakash ✓</p>
+                        <p class="video-stats">4.8K views • 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 4 -->
+
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="" alt="Video Thumbnail">
+                </div>
+
+                <div class="video-info">
+                    <div class="channel-image">
+                        <img src="" alt="Channel">
+                    </div>
+
+                    <div class="video-text">
+                        <p class="video-title">
+                            My Mix
+                        </p>
+
+                        <p class="channel-name">
+                            Lopamudra Mitra, Anupam Roy, and more
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 5 -->
+
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="" alt="Video Thumbnail">
+                </div>
+
+                <div class="video-info">
+                    <div class="channel-image">
+                        <img src="" alt="Channel">
+                    </div>
+
+                    <div class="video-text">
+                        <p class="video-title">
+                            UX Design - What is it? (From AJ & Smart)
+                        </p>
+
+                        <p class="channel-name">AJ&Smart ✓</p>
+                        <p class="video-stats">150K views • 3 years ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 6 -->
+
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="" alt="Video Thumbnail">
+                </div>
+
+                <div class="video-info">
+                    <div class="channel-image">
+                        <img src="" alt="Channel">
+                    </div>
+
+                    <div class="video-text">
+                        <p class="video-title">
+                            Mix - Mombati | Mohon Sharif | Dhakaiya Dose
+                        </p>
+
+                        <p class="channel-name">
+                            Mohon Sharif, Odd Signature, Shayan Chowdhury Arnob, and more
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 7 -->
+
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="" alt="Video Thumbnail">
+                </div>
+
+                <div class="video-info">
+                    <div class="channel-image">
+                        <img src="" alt="Channel">
+                    </div>
+
+                    <div class="video-text">
+                        <p class="video-title">
+                            48 VISA-FREE Countries
+                        </p>
+
+                        <p class="channel-name">Nadir On The Go ✓</p>
+                        <p class="video-stats">1.7M views • 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 8 -->
+
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="" alt="Video Thumbnail">
+                </div>
+
+                <div class="video-info">
+                    <div class="channel-image">
+                        <img src="" alt="Channel">
+                    </div>
+
+                    <div class="video-text">
+                        <p class="video-title">
+                            14 Advanced Tips to Design FASTER in Figma
+                        </p>
+
+                        <p class="channel-name">Mizko ✓</p>
+                        <p class="video-stats">53K views • 1 month ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 9 -->
+
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="" alt="Video Thumbnail">
+                </div>
+
+                <div class="video-info">
+                    <div class="channel-image">
+                        <img src="" alt="Channel">
+                    </div>
+
+                    <div class="video-text">
+                        <p class="video-title">
+                            Technology and Computer Skills
+                        </p>
+
+                        <p class="channel-name">Tech Channel</p>
+                        <p class="video-stats">120K views • 3 months ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 10 -->
+
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="" alt="Video Thumbnail">
+                </div>
+
+                <div class="video-info">
+                    <div class="channel-image">
+                        <img src="" alt="Channel">
+                    </div>
+
+                    <div class="video-text">
+                        <p class="video-title">
+                            Best Tech Skills to Learn
+                        </p>
+
+                        <p class="channel-name">Tech Channel</p>
+                        <p class="video-stats">200K views • 2 months ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 11 -->
+
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="" alt="Video Thumbnail">
+                </div>
+
+                <div class="video-info">
+                    <div class="channel-image">
+                        <img src="" alt="Channel">
+                    </div>
+
+                    <div class="video-text">
+                        <p class="video-title">
+                            Google and Technology Explained
+                        </p>
+
+                        <p class="channel-name">Tech Channel</p>
+                        <p class="video-stats">500K views • 5 months ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 12 -->
+
+            <div class="video-card">
+                <div class="thumbnail">
+                    <img src="" alt="Video Thumbnail">
+                </div>
+
+                <div class="video-info">
+                    <div class="channel-image">
+                        <img src="" alt="Channel">
+                    </div>
+
+                    <div class="video-text">
+                        <p class="video-title">
+                            Microsoft and Computer Technology
+                        </p>
+
+                        <p class="channel-name">Tech Channel</p>
+                        <p class="video-stats">300K views • 4 months ago</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
+```
