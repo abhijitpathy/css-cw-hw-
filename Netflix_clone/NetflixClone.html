@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <style>
+        .cont {
+            background-color: black;
+        }
+
+        .b1 {}
+
+        .thumbnailnav {
+            border: 2px solid black;
+            background-image: url(/css-cw-hw-/Netflix_clone/Assests/Title-Image.png);
+            width: 100%;
+            height: 700px;
+            background-size: cover;
+        }
+
+        body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#000;}
+        .nav {
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:18px 40px;
+            position:fixed;
+            width:100%;
+            top:0;
+            left:0;
+            box-sizing:border-box;
+            background:linear-gradient(to bottom,rgba(0,0,0,.8),transparent);
+            z-index:1000;
+        }
+
+        .left {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+        }
+
+        .right {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+        }
+
+        .navtxt {
+            display: flex;
+            color: rgb(175, 186, 196);
+            font-weight: 100;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .shwnmbck {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 40px;
+            padding-top: 250px;
+        }
+
+
+        .nshow {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+        }
+
+        .nshow p {
+            margin: 0;
+            font-size: 18px;
+        }
+
+
+        .shownm p {
+            margin: 0;
+            color: white;
+            font-size: 70px;
+            font-weight: bold;
+        }
+
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .play,
+        .info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+
+        .play {
+            background: white;
+            color: black;
+        }
+
+        .info {
+            background: rgba(109, 109, 110, 0.7);
+            color: white;
+        }
+
+        .play p,
+        .info p {
+            margin: 0;
+        }
+
+        .Add {
+            padding-left: 96%;
+        }
+
+        .seeagain {
+            display: flex;
+            font-size: 34px;
+            gap: 10px;
+            padding-left: 30px;
+            color: azure;
+
+        }
+
+        .r1 {
+            padding-left: 30px;
+
+        }
+
+        .shows {
+            display: flex;
+            gap: 40px;
+            padding-left: 30px;
+        }
+
+        .r2 {
+            padding-top: 100px;
+            color: azure;
+
+        }
+
+        .ranking {
+            display: flex;
+            font-size: 34px;
+            gap: 10px;
+            padding-left: 60px;
+            color: azure;
+
+        }
+
+        .ranking img {
+            padding-top: 47px;
+        }
+
+        .b2 {}
+
+        .shows2 {
+            display: flex;
+            gap: 50px;
+        }
+
+        .shows3 {
+            display: flex;
+            gap: 50px;
+
+        }
+
+        .Trendingnow {
+            display: flex;
+            font-size: 34px;
+            gap: 10px;
+            padding-left: 60px;
+            color: azure;
+
+        }
+
+        .r3 {
+            padding-top: 100px;
+            color: azure;
+
+        }
+        .sectionTitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 28px;
+    padding-left: 60px;
+    margin-bottom: 20px;
+}
+
+.shows3,
+.shows4 {
+    display: flex;
+    gap: 40px;
+    padding-left: 60px;
+}
+
+.shows3 img,
+.shows4 img {
+    width: 240px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.shows3 img:hover,
+.shows4 img:hover {
+    transform: scale(1.08);
+}
+
+.r4 {
+    margin-top: 70px;
+}
+
+.footer {
+    width: 70%;
+    margin: 90px auto 30px;
+    color: grey;
+    font-size: 14px;
+}
+
+.social {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.social img {
+    width: 25px;
+    cursor: pointer;
+}
+
+.footerLinks {
+    display: flex;
+    justify-content: space-between;
+    line-height: 35px;
+}
+
+
+.serviceBtn {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background: transparent;
+    color: grey;
+    border: 1px solid grey;
+}
+
+.copyright {
+    margin-top: 25px;
+    color: grey;
+}
+.shows img,.shows2 img,.shows3 img,.shows4 img{
+border-radius:4px;
+transition:.3s;
+cursor:pointer;
+}
+.shows img:hover,.shows2 img:hover,.shows3 img:hover,.shows4 img:hover{
+transform:scale(1.08);
+box-shadow:0 10px 25px rgba(0,0,0,.6);
+}
+.play,.info{cursor:pointer;transition:.25s;font-weight:bold;}
+.play:hover{background:#ddd;}
+.info:hover{background:rgba(109,109,110,.9);}
+.navtxt p{cursor:pointer;transition:.2s;}
+.navtxt p:hover,.footerLinks p:hover{color:#fff;}
+</style>
+
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+        <div class="b1">
+            <div class="thumbnailnav">
+                <div class="nav">
+                    <div class="left">
+                        <div><img src="/css-cw-hw-/Netflix_clone/Assests/NetflixLogoSvg.png" alt="" width="100px"></div>
+                        <div class="navtxt">
+                            <p>Start</p>
+                            <p>shows</p>
+                            <p>Movies</p>
+                            <P>New</P>
+                            <p>My list</p>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div>
+                            <img src="/css-cw-hw-/Netflix_clone/Assests/Search.png" alt="">
+                        </div>
+                        <div>
+                            <img src="/css-cw-hw-/Netflix_clone/Assests/GiftBox.png" alt="">
+                        </div>
+                        <div>
+                            <img src="/css-cw-hw-/Netflix_clone/Assests/NotificationBell.png" alt="">
+                        </div>
+                        <div>
+                            <img src="/css-cw-hw-/Netflix_clone/Assests/ProfileIMG.png" alt="">
+                        </div>
+                        <div> <img src="/css-cw-hw-/Netflix_clone/Assests/DownArrow.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="nm">
+                    <div class="shwnmbck">
+                        <div class="nshow">
+                            <img src="/css-cw-hw-/Netflix_clone/Assests/Netflix_Symbol_RGB 1.png" alt="" width="30">
+
+                            <p>SHOW</p>
+                        </div>
+
+                        <div class="shownm">
+                            <p>MAID</p>
+                        </div>
+
+                        <div class="buttons">
+                            <div class="play">
+                                <img src="/css-cw-hw-/Netflix_clone/Assests/Play.png" alt="">
+                                <p>Play</p>
+                            </div>
+
+                            <div class="info">
+                                <img src="/css-cw-hw-/Netflix_clone/Assests/Detail.png" alt="" width="25">
+                                <p>More Info</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Add">
+                    <img src="/css-cw-hw-/Netflix_clone/Assests/Add.png" alt="" width="40px">
+                </div>
+                <div class="r1">
+                    <div class="seeagain">
+                        <div>See again</div>
+                        <div><img src="/css-cw-hw-/Netflix_clone/Assests/ArrowRight.png" alt=""></div>
+                    </div>
+                    <div class="shows">
+                        <div><img src="/css-cw-hw-/Netflix_clone/Assests/section 1.1.png" alt=""></div>
+                        <div><img src="/css-cw-hw-/Netflix_clone/Assests/section 1.2.png" alt=""></div>
+                        <div><img src="/css-cw-hw-/Netflix_clone/Assests/section 1.3.png" alt=""></div>
+                        <div><img src="/css-cw-hw-/Netflix_clone/Assests/section 1.4.png" alt=""></div>
+                        <div><img src="/css-cw-hw-/Netflix_clone/Assests/section 1.5.png" alt=""></div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+        <div class="b2">
+            <div class="r2">
+                <div class="ranking">
+                    <div>
+                        <p>Top 10 in your country</p>
+                    </div>
+                    <div><img src="/css-cw-hw-/Netflix_clone/Assests/ArrowRight.png" alt=""></div>
+                </div>
+                <div class="shows2">
+                    <div>
+                        <img src="/css-cw-hw-/Netflix_clone/Assests/Rank - 01.png" alt="">
+                        <img src="/css-cw-hw-/Netflix_clone/Assests/section 2.1.png" alt="" height="200px">>
+                    </div>
+                    <div>
+                        <img src="/css-cw-hw-/Netflix_clone/Assests/Rank - 02.png" alt="">
+                        <img src="/css-cw-hw-/Netflix_clone/Assests/section 2.2.png" alt="" height="200px">
+                    </div>
+                    <div>
+                        <img src="/css-cw-hw-/Netflix_clone/Assests/Rank - 03.png" alt="">
+                        <img src="/css-cw-hw-/Netflix_clone/Assests/section 2.3.png" alt="" height="200px">
+                    </div>
+                    <div>
+                        <img src="/css-cw-hw-/Netflix_clone/Assests/Rank - 04.png" alt="">
+                        <img src="/css-cw-hw-/Netflix_clone/Assests/section 2.4.png" alt="" height="200px">
+                    </div>
+                    <div>
+                        <img src="/css-cw-hw-/Netflix_clone/Assests/Rank - 05.png" alt="">
+                        <img src="/css-cw-hw-/Netflix_clone/Assests/section 2.5.png" alt="" height="200px">
+                    </div>
+                </div>
+            </div>
+            <div class="r3">
+                <div class="Trendingnow">
+                    <div>Trending now</div>
+                    <div><img src="/css-cw-hw-/Netflix_clone/Assests/ArrowRight.png" alt=""></div>
+                </div>
+                <div class="shows3">
+                    <div><img src="/css-cw-hw-/Netflix_clone/Assests/section 3.1.png" alt=""></div>
+                    <div><img src="/css-cw-hw-/Netflix_clone/Assests/section 3.2.png" alt=""></div>
+                    <div><img src="/css-cw-hw-/Netflix_clone/Assests/section 3.3.png" alt=""></div>
+                    <div><img src="/css-cw-hw-/Netflix_clone/Assests/section 3.4.png" alt=""></div>
+                    <div><img src="/css-cw-hw-/Netflix_clone/Assests/section 3.5.png" alt=""></div>
+                </div>
+            </div>
+            <div class="r4">
+                <div class="sectionTitle">
+                    <div>Sci-fi shows</div>
+                    <div>
+                        <img src="/css-cw-hw-/Netflix_clone/Assests/ArrowRight.png" alt="">
+                    </div>
+                </div>
+
+                <div class="shows4">
+                    <img src="/css-cw-hw-/Netflix_clone/Assests/section 4.1.png" alt="">
+                    <img src="/css-cw-hw-/Netflix_clone/Assests/section 4.2.png" alt="">
+                    <img src="/css-cw-hw-/Netflix_clone/Assests/section 4.3.png" alt="">
+                    <img src="/css-cw-hw-/Netflix_clone/Assests/section 4.4.png" alt="">
+                    <img src="/css-cw-hw-/Netflix_clone/Assests/section 4.5.png" alt="">
+                </div>
+            </div>
+
+
+            <div class="footer">
+
+                <div class="social">
+                    <img src="/css-cw-hw-/Netflix_clone/Assests/facebook.png" alt="">
+                    <img src="/css-cw-hw-/Netflix_clone/Assests/instagram.png" alt="">
+                    <img src="/css-cw-hw-/Netflix_clone/Assests/twitter.png" alt="">
+                    <img src="/css-cw-hw-/Netflix_clone/Assests/youtube.png" alt="">
+                </div>
+
+                <div class="footerLinks">
+
+                    <div>
+                        <p>Audio and Subtitles</p>
+                        <p>Media Center</p>
+                        <p>Privacy</p>
+                        <p>Contact Us</p>
+                    </div>
+
+                    <div>
+                        <p>Audio Description</p>
+                        <p>Investor Relations</p>
+                        <p>Legal Notices</p>
+                    </div>
+
+                    <div>
+                        <p>Help Center</p>
+                        <p>Jobs</p>
+                        <p>Cookie Preferences</p>
+                    </div>
+
+                    <div>
+                        <p>Gift Cards</p>
+                        <p>Terms of Use</p>
+                        <p>Corporate Information</p>
+                    </div>
+
+                </div>
+
+                <button class="serviceBtn">Service Code</button>
+
+                <p class="copyright">
+                    © 1997-2021 Netflix, Inc. (i-062d57a0ee099242)
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
+
+<style>
